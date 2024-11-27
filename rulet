@@ -1,0 +1,101 @@
+from random import randint
+
+rulet_masasi = {
+    0: "yeşil",
+    1: "kırmızı",
+    2: "siyah",
+    3: "kırmızı",
+    4: "siyah",
+    5: "kırmızı",
+    6: "siyah",
+    7: "kırmızı",
+    8: "siyah",
+    9: "kırmızı",
+    10: "siyah",
+    11: "siyah",
+    12: "kırmızı",
+    13: "siyah",
+    14: "kırmızı",
+    15: "siyah",
+    16: "kırmızı",
+    17: "siyah",
+    18: "kırmızı",
+    19: "kırmızı",
+    20: "siyah",
+    21: "kırmızı",
+    22: "siyah",
+    23: "kırmızı",
+    24: "siyah",
+    25: "kırmızı",
+    26: "siyah",
+    27: "kırmızı",
+    28: "siyah",
+    29: "siyah",
+    30: "kırmızı",
+    31: "siyah",
+    32: "kırmızı",
+    33: "siyah",
+    34: "kırmızı",
+    35: "siyah",
+    36: "kırmızı"
+}
+
+###menu
+
+print("1.sayi")
+print("2.cift tek")
+print("3.renk ")
+print("oynamak istediginiz bahis turunu seciniz")
+secim=input("-->")
+
+
+if int(secim) == 1:
+
+
+        print("oynamak istediginiz sayiyi seciniz")
+
+        say = int(input("sayi giriniz :"))
+        print(f"secilen sayi {say}")
+
+        rs = randint(0 ,35)
+        cıktı = list(rulet_masasi.items())[rs]
+
+        print(f"cıkan sayı {cıktı[0]} \n cıkan renk {cıktı[1]}")
+
+
+        if say == int(cıktı[0]):
+            print("tebrikler kazandınız")
+        else :
+            print("tekrar deneyiniz")
+
+elif int(secim) == 2:
+    print("tek icin : 1 cift icin :2")
+    say = int(input("1 mi 2 mi :"))
+
+    rs = randint(0, 35)
+    cikti = list(rulet_masasi.items())[rs]
+
+
+    if cikti[0] % say == 0:
+            print("kazandın")
+    else :
+            print("kaybettin")
+
+
+elif int(secim) == 3:
+    print("kırmızı mı siyah mı")
+    say = str(input("renk giriniz"))
+
+    rs = randint(0, 35)
+    cikti = list(rulet_masasi.items())[rs]
+    soso = say.upper()
+    popo = cikti[1]
+    aga = popo.upper()
+
+    if aga == soso:
+        print("kazandın")
+    else:
+        print("kaybettin")
+
+else:
+    print("lutfen gecerli bir secim giriniz")
